@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nicotech AI - Generator</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body class="generator-body">
+    <div class="generator-container">
+        <nav class="nav-bar">
+            <a href="/" class="back-link">&larr; Back to Home</a>
+        </nav>
+
+        <h1>Nicotech AI Generator</h1>
+        <p class="subtitle">powered by NICTO TECH</p>
+
+        <div class="input-group">
+            <input type="text" id="prompt-input" placeholder="Describe the image you want..." />
+            <button id="generate-btn">
+                <span>Generate</span>
+            </button>
+        </div>
+
+        <div class="image-area">
+            <div class="loader" id="loader" style="display: none;"></div>
+            <img id="generated-image" alt="Generated Image" style="display: none;" />
+        </div>
+
+        <button id="download-btn" class="download-btn" style="display: none;">
+            Download Image
+        </button>
+
+        <div class="history-section">
+            <h3>Recent History</h3>
+            <div class="history-grid" id="history-grid">
+                <!-- History items will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/generate.js"></script>
+</body>
+
+</html>
