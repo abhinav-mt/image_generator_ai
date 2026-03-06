@@ -89,7 +89,7 @@ generateBtn.addEventListener('click', async () => {
         }
 
         const response = await fetch(
-            "/api/hf/models/black-forest-labs/FLUX.1-schnell",
+            "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-schnell",
             {
                 headers: {
                     Authorization: `Bearer ${token}`,
