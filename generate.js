@@ -88,18 +88,16 @@ generateBtn.addEventListener('click', async () => {
             throw new Error("Missing Hugging Face API Token. Check your .env file.");
         }
 
-        // Direct Connection: Bypasses Vercel Proxy to fix 404 errors
-        console.log("Direct Fetch: Attempting connection to Hugging Face API...");
+        // Professional Proxy Connection: Uses Vercel Serverless Function
+        console.log("Proxy Fetch: Connecting via serverless backend...");
 
         const response = await fetch(
-            "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-schnell",
+            "/api/generate",
             {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                    "Content-Type": "application/json",
-                    "x-use-cache": "false"
-                },
                 method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
                 body: JSON.stringify({ inputs: prompt }),
             }
         );

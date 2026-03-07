@@ -4,10 +4,10 @@ import { resolve } from 'path';
 export default defineConfig({
     server: {
         proxy: {
-            '/api/v2': {
-                target: 'https://api-inference.huggingface.co',
+            '/api/generate': {
+                target: 'https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-schnell',
                 changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/api\/v2/, '')
+                rewrite: (path) => ''
             }
         }
     },
