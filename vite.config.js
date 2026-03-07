@@ -5,7 +5,7 @@ export default defineConfig({
     server: {
         proxy: {
             '/api/hf': {
-                target: 'https://router.huggingface.co/hf-inference',
+                target: 'https://api-inference.huggingface.co',
                 changeOrigin: true,
                 rewrite: (path) => path.replace(/^\/api\/hf/, '')
             }
