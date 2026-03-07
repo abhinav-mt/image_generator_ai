@@ -88,9 +88,9 @@ generateBtn.addEventListener('click', async () => {
             throw new Error("Missing Hugging Face API Token. Check your .env file.");
         }
 
-        console.log("Attempting fetch to:", "/api/hf/models/black-forest-labs/FLUX.1-schnell");
+        console.log("V2: Attempting fetch to:", "/api/v2/models/black-forest-labs/FLUX.1-schnell");
         const response = await fetch(
-            "/api/hf/models/black-forest-labs/FLUX.1-schnell",
+            "/api/v2/models/black-forest-labs/FLUX.1-schnell",
             {
                 headers: {
                     Authorization: `Bearer ${token}`,

@@ -4,10 +4,10 @@ import { resolve } from 'path';
 export default defineConfig({
     server: {
         proxy: {
-            '/api/hf': {
+            '/api/v2': {
                 target: 'https://api-inference.huggingface.co',
                 changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/api\/hf/, '')
+                rewrite: (path) => path.replace(/^\/api\/v2/, '')
             }
         }
     },
