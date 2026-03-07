@@ -5,7 +5,7 @@ export default defineConfig({
     server: {
         proxy: {
             '/api/generate': {
-                target: 'https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-schnell',
+                target: 'https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-schnell',
                 changeOrigin: true,
                 rewrite: (path) => ''
             }
