@@ -88,12 +88,11 @@ generateBtn.addEventListener('click', async () => {
             throw new Error("Missing Hugging Face API Token. Check your .env file.");
         }
 
-        // Forced Version: 2.0.4 (Ensures Vercel re-deploys fresh logic)
-        const timestamp = Date.now();
-        console.log(`V2 [${timestamp}]: Attempting fetch to:`, "/api/v2/models/black-forest-labs/FLUX.1-schnell");
+        // Direct Connection: Bypasses Vercel Proxy to fix 404 errors
+        console.log("Direct Fetch: Attempting connection to Hugging Face API...");
 
         const response = await fetch(
-            `/api/v2/models/black-forest-labs/FLUX.1-schnell?t=${timestamp}`,
+            "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-schnell",
             {
                 headers: {
                     Authorization: `Bearer ${token}`,
